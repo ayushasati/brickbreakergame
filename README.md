@@ -10,5 +10,11 @@ A simple and elegant game in java
 <br>
 
 
-![Tutorial](https://github.com/ayushasati/brickbreakergame/assets/98347325/967470ba-822f-4c45-a87b-0353e3b3d11a)
+![TUTORIAL](https://github.com/ayushasati/brickbreakergame/assets/98347325/54c8606d-7e14-40f0-99a0-9f9eadc4e284)
+
+
+
+
+
+
 
