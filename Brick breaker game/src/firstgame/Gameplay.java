@@ -124,9 +124,30 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
                             map.setBrickValue(0 ,i,j);
                             totalbriks--;
                             score+=5;
-                            if (ballposX + 19 <= brickRect.x || ballposX + 1 >= brickRect.x + brickRect.width){
-                                ballXdir = - ballXdir;
-                            }
+                            // Determine the direction of the ball after collision
+    if (ballposX + 19 <= brickRect.x || ballposX + 1 >= brickRect.x + brickRect.width) {
+    // If the ball hits the left or right side of the brick, reverse the horizontal direction
+    ballXdir = -ballXdir;
+        } 
+
+    if (ballposY + 19 <= brickRect.y || ballposY + 1 >= brickRect.y + brickRect.height) {
+    // If the ball hits the top or bottom of the brick
+    // and also hits the left or right side of the brick, 
+    // you may want to decide the direction based on the relative positions
+    // For example, if the ball is closer to the top side of the brick, reverse the vertical direction,
+    // and if it's closer to the left side, reverse the horizontal direction
+    double centerBrickX = brickRect.x + brickRect.width / 2.0;
+    double centerBrickY = brickRect.y + brickRect.height / 2.0;
+
+    if (Math.abs(ballposX + 10 - centerBrickX) < Math.abs(ballposY + 10 - centerBrickY)) {
+        // Closer to the left/right side, reverse the horizontal direction
+        ballXdir = -ballXdir;
+    } else {
+        // Closer to the top/bottom side, reverse the vertical direction
+        ballYdir = -ballYdir;
+    }
+}
+
                             else{
                                 ballYdir = - ballYdir;
                             }
